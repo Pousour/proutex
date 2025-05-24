@@ -1,0 +1,335 @@
+/* Global Styles */
+body {
+  background-color: #0D1117;
+  color: #C9D1D9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  opacity: 0;
+}
+
+/* Header Styles */
+.App-header {
+  background-color: transparent;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #21262D;
+}
+
+.App-header h1 {
+  font-size: 3.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #DB2777; /* Maintained pink color */
+  letter-spacing: -0.5px;
+}
+
+.App-header p {
+  font-size: 1.1em;
+  color: #8B949E;
+  margin-top: 0;
+  margin-bottom: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proutex-points-display {
+  background-color: #21262D;
+  color: #58A6FF;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.proutex-points-display strong {
+  color: #79C0FF;
+}
+
+/* Main Content Layout */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #161B22;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #30363D;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card h2 {
+  color: #DB2777; /* Maintained pink color */
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.65em;
+  border-bottom: 1px solid #2A3038;
+  padding-bottom: 12px;
+}
+
+.card p {
+  font-size: 1em;
+  color: #C9D1D9;
+  margin-bottom: 15px;
+}
+
+.card strong {
+  color: #E6EDF3;
+  font-weight: 600;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: #21262D;
+  border-radius: 6px;
+  color: #C9D1D9;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card li:hover {
+  background-color: #30363D;
+  transform: translateX(5px);
+}
+
+/* Button Styles */
+button {
+  background-color: #DB2777; /* Maintained pink color */
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 3px 8px rgba(219, 39, 119, 0.2);
+}
+
+button:hover {
+  background-color: #C11B67; /* Darker pink on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(219, 39, 119, 0.3);
+}
+
+button:active {
+  transform: translateY(0px);
+  background-color: #AD1A5D; /* Even darker pink on active */
+  box-shadow: 0 2px 5px rgba(219, 39, 119, 0.2);
+}
+
+/* Risk Assessment Selector Styles */
+.risk-selector {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  gap: 10px; /* Add gap between buttons */
+}
+
+.risk-button {
+  flex-grow: 1; /* Allow buttons to grow and fill space */
+  padding: 12px 15px;
+  font-size: 1em;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.risk-button.low {
+  background-color: #2ea04320; /* Light green background */
+  border-color: #2ea043;
+  color: #58a6ff; /* Adjusted for visibility */
+}
+.risk-button.low:hover, .risk-button.low.selected {
+  background-color: #2ea043;
+  color: #ffffff;
+  box-shadow: 0 0 15px #2ea04380;
+}
+
+.risk-button.medium {
+  background-color: #f7b42c20; /* Light orange background */
+  border-color: #f7b42c;
+  color: #f7b42c;
+}
+.risk-button.medium:hover, .risk-button.medium.selected {
+  background-color: #f7b42c;
+  color: #161B22; /* Darker text for contrast */
+  box-shadow: 0 0 15px #f7b42c80;
+}
+
+.risk-button.high {
+  background-color: #f8514920; /* Light red background */
+  border-color: #f85149;
+  color: #f85149;
+}
+.risk-button.high:hover, .risk-button.high.selected {
+  background-color: #f85149;
+  color: #ffffff;
+  box-shadow: 0 0 15px #f8514980;
+}
+
+.selected-risk-display {
+  margin-top: 15px;
+  font-size: 1.1em;
+  text-align: center;
+}
+.selected-risk-display strong {
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.risk-text-low { color: #2ea043; background-color: #2ea04320; }
+.risk-text-medium { color: #f7b42c; background-color: #f7b42c20; }
+.risk-text-high { color: #f85149; background-color: #f8514920; }
+
+
+/* Blame Game & Sound Masking Specifics */
+.blame-game .scapegoat-reveal,
+.sound-masking .sound-suggestion {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #21262D;
+  border-left: 4px solid #DB2777; /* Maintained pink color */
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+}
+
+.blame-game .scapegoat-reveal strong,
+.sound-masking .sound-suggestion strong {
+  color: #DB2777; /* Maintained pink color */
+  font-style: normal;
+}
+
+.sound-masking h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #8B949E;
+}
+
+.sound-masking .sound-controls {
+  display: flex;
+  gap: 15px; /* Space between play and stop buttons */
+  margin-bottom: 15px;
+}
+
+.sound-masking .stop-button {
+  background-color: #6e7681; /* GitHub gray for stop button */
+  box-shadow: 0 3px 8px rgba(110, 118, 129, 0.2);
+}
+.sound-masking .stop-button:hover {
+  background-color: #57606a;
+  box-shadow: 0 5px 12px rgba(110, 118, 129, 0.3);
+}
+.sound-masking .stop-button:active {
+  background-color: #4f5760;
+  box-shadow: 0 2px 5px rgba(110, 118, 129, 0.2);
+}
+
+
+.sound-masking .sound-list li {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.sound-masking .sound-list li:hover {
+  background-color: #38404a;
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.sound-masking .sound-list li:active {
+  background-color: #404853;
+  transform: translateX(2px) scale(1.01);
+}
+
+.sound-masking .sound-list li.playing {
+  background-color: #DB2777; /* Pink highlight for playing sound */
+  color: #ffffff;
+  font-weight: bold;
+  box-shadow: 0 0 10px #DB277780;
+}
+.sound-masking .sound-list li.playing:hover {
+  background-color: #C11B67; /* Darker pink on hover for playing item */
+}
+
+
+/* Loading Text */
+.loading-text {
+  font-style: italic;
+  color: #8B949E;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+/* Animations */
+.fade-in-app {
+  animation: fadeInApp 0.6s 0.1s ease-out forwards;
+}
+
+@keyframes fadeInApp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.fade-in-card {
+  animation: fadeInCard 0.5s ease-out forwards;
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Footer */
+.App-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #21262D;
+  font-size: 0.9em;
+  color: #8B949E;
+}
